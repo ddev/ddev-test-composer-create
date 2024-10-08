@@ -1,0 +1,5 @@
+{
+    "name": "ddev/ddev-test-composer-require",
+    "description": "This is a test library to check if 'require' section works.",
+    "type": "library"
+}

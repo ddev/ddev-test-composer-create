@@ -1,0 +1,48 @@
+{
+    "name": "ddev/ddev-test-composer-create",
+    "description": "This is a test project to check 'ddev composer create' behavior.",
+    "license": "Apache-2.0",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Stanislav Zhuk",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "support@ddev.com",
+        "docs": "https://ddev.readthedocs.io/"
+    },
+    "require": {
+        "ddev/ddev-test-composer-require": "*"
+    },
+    "require-dev": {
+        "ddev/ddev-test-composer-require-dev": "*"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./packages/ddev-test-composer-require",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "./packages/ddev-test-composer-require-dev",
+            "options": {
+                "symlink": false
+            }
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-root-package-install": [
+            "@php -r \"touch('created-by-post-root-package-install');\""
+        ],
+        "post-create-project-cmd": [
+            "@php -r \"touch('created-by-post-create-project-cmd');\""
+        ]
+    }
+}
